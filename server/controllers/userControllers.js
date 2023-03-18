@@ -3,7 +3,7 @@ const User = require('../models/User');
 // Fetches all Users data [Paginated]
 const getAllUsers = async (req, res) => {
     try {
-        const { page = 1, limit = 5 } = req.query;
+        const { page = 1, limit = 20 } = req.query;
 
         const users = await User.find()
             .limit(limit * 1)
