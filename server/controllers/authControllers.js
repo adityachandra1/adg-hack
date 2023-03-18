@@ -1,9 +1,9 @@
 // Auth Routes
-const { User } = require('../models/User');
+const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = "jwtsecret";
 
 const login = async (req, res) => {
     const { email, password } = req.body;
@@ -34,7 +34,7 @@ const login = async (req, res) => {
             });
         }
 
-        const token = jwt.sign({ userId: user._id, username: user.username, email: user.email, role: user.role }, JWT_SECRET, {
+        const token = jwt.sign({ userId: user._id } , JWT_SECRET, {
             expiresIn: '1h',
         });
 
