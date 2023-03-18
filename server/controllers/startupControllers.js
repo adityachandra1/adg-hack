@@ -2,6 +2,8 @@ const Startup = require("../models/Startup");
 const User = require("../models/User");
 const Post = require("../models/Post");
 var mongoose = require("mongoose");
+const PDFDocument = require("pdfkit");
+const fs = require("fs");
 
 const registerStartup = async (req, res) => {
   // post request, register startup, get body from request and create a new startup, and add it.
@@ -19,11 +21,12 @@ const registerStartup = async (req, res) => {
   return res.status(200).json({ message: "Startup created" });
 };
 
-const getAllStarutps = async (req, res) => {
+const getAllStartups = async (req, res) => {
   // get request, get all startups, return all startups.
   const startups = await Startup.find();
   res.status(200).json(startups);
 };
+
 const addMembersToStartup = async (req, res) => {
   // post request, add members to startup, get body from request and create a new member for the startup, and add it.
   const { startupId, userId } = req.body;
@@ -71,40 +74,43 @@ const deleteUserFromStartup = async (req, res) => {
 };
 
 const generatePDF = async (req, res) => {
-  // Generate a PDF of the startup and send it to the user.
-  const PDFDocument = require("pdfkit");
-
   // Get the startup name
-  const { startupId } = req.body;
+  const { startupId } = req.query;
   const startup = await Startup.findById(startupId);
   const startupName = startup.name;
+  console.log(startupName);
 
   const doc = new PDFDocument();
-  var stream = doc.pipe(blobStream());
-  doc.fontSize(25).text(`Startup : ${startupName} Report`, 50, 50);
+  doc.pipe(fs.createWriteStream("output.pdf"));
+  doc.font("Futura.ttf").fontSize(25);
+  doc.text(`Startup Report`);
+  doc.fillColor("#FFD4F7FE").text(`${startupName}`);
 
-  doc.image("image1.png", {
-    fit: [250, 300],
-    align: "center",
-    valign: "center",
+  doc.image("image1.png", 100, 100, {
+    fit: [180, 180],
+    align: "left",
   });
 
-  doc.image("image2.png", {
-    fit: [250, 300],
-    align: "center",
-    valign: "center",
+  doc.image("image2.png", 200, 100, {
+    fit: [180, 180],
+    align: "right",
   });
 
+  doc.fontSize(16);
   doc.text("Key Performance Indicators: ");
 
+  doc.moveDown();
+  doc.fontSize(10);
   doc.list([
     "Reduce Bounce Rate by 25%",
     "Increase Conversion Rate by 15%",
     "Increase click-through rate by 10%",
   ]);
 
+  doc.fontSize(16);
   doc.text("Objectives and Key Results: ");
 
+  doc.fontSize(10);
   doc.list([
     "Increase revenue by 20%",
     "Increase number of users by 10%",
@@ -113,10 +119,7 @@ const generatePDF = async (req, res) => {
   ]);
 
   doc.end();
-  stream.on("finish", function () {
-    var blob = stream.toBlob("application/pdf");
-    saveAs(blob, "report.pdf");
-  });
+  return res.status(200).json({ message: "PDF generated" });
 };
 
 module.exports = {
@@ -126,4 +129,5 @@ module.exports = {
   getMonthlyNumOfUsers,
   deleteUserFromStartup,
   generatePDF,
+  getAllStartups,
 };
