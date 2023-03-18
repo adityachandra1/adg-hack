@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema(
         },
         type: {
             type: String,
-            required: true, 
+            required: true,
             enum: ['blog', 'news', 'event', 'achievement', 'hiring']
         },
         author: {
@@ -27,7 +27,6 @@ const postSchema = new mongoose.Schema(
             type: Number,
             default: 0
         },
-        timestamps: true
     }
 );
 
