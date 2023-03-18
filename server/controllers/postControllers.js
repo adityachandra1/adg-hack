@@ -1,4 +1,4 @@
-const Post = require('../models/post');
+const Post = require("../models/post");
 
 // Create a new post
 const createPost = async (req, res) => {
@@ -27,7 +27,7 @@ const getPostById = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {
-      return res.status(404).json({ message: 'Post not found' });
+      return res.status(404).json({ message: "Post not found" });
     }
     res.status(200).json(post);
   } catch (error) {
@@ -41,7 +41,7 @@ const updatePost = async (req, res) => {
     const { title, body, tags } = req.body;
     const post = await Post.findById(req.params.id);
     if (!post) {
-      return res.status(404).json({ message: 'Post not found' });
+      return res.status(404).json({ message: "Post not found" });
     }
     post.title = title;
     post.body = body;
@@ -58,7 +58,7 @@ const deletePost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {
-      return res.status(404).json({ message: 'Post not found' });
+      return res.status(404).json({ message: "Post not found" });
     }
     await post.delete();
     res.status(204).end();
@@ -72,5 +72,5 @@ module.exports = {
   getAllPosts,
   getPostById,
   updatePost,
-  deletePost
+  deletePost,
 };
