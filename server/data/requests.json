@@ -1,0 +1,66 @@
+[
+    {
+        "requester": "John Doe",
+        "resourceType": "Laptop",
+        "requestedDate": "2022-03-18T14:15:00.000Z",
+        "requestContent": "I need a laptop for work purposes.",
+        "status": "pending",
+        "approvedBy": ""
+    },
+    {
+        "requester": "Jane Smith",
+        "resourceType": "Conference Room",
+        "requestedDate": "2022-03-17T09:30:00.000Z",
+        "requestContent": "I need a conference room for a meeting with clients.",
+        "status": "approved",
+        "approvedBy": "Bob Johnson"
+    },
+    {
+        "requester": "Bob Johnson",
+        "resourceType": "Projector",
+        "requestedDate": "2022-03-16T16:45:00.000Z",
+        "requestContent": "I need a projector for a presentation.",
+        "status": "rejected",
+        "approvedBy": ""
+    },
+    {
+        "requester": "Alice Lee",
+        "resourceType": "Microphone",
+        "requestedDate": "2022-03-18T14:15:00.000Z",
+        "requestContent": "I need a microphone for an online meeting.",
+        "status": "pending",
+        "approvedBy": ""
+    },
+    {
+        "requester": "Bob Smith",
+        "resourceType": "Printer",
+        "requestedDate": "2022-03-18T09:30:00.000Z",
+        "requestContent": "I need a printer to print some documents.",
+        "status": "approved",
+        "approvedBy": "John Doe"
+    },
+    {
+        "requester": "Jane Doe",
+        "resourceType": "Table",
+        "requestedDate": "2022-03-17T16:45:00.000Z",
+        "requestContent": "I need a table for a project work.",
+        "status": "rejected",
+        "approvedBy": ""
+    },
+    {
+        "requester": "John Smith",
+        "resourceType": "Whiteboard",
+        "requestedDate": "2022-03-16T14:15:00.000Z",
+        "requestContent": "I need a whiteboard for a brainstorming session.",
+        "status": "approved",
+        "approvedBy": "Bob Johnson"
+    },
+    {
+        "requester": "Sara Lee",
+        "resourceType": "Headphones",
+        "requestedDate": "2022-03-15T09:30:00.000Z",
+        "requestContent": "I need headphones to listen to music while working.",
+        "status": "pending",
+        "approvedBy": ""
+    }
+]
