@@ -1,0 +1,120 @@
+[
+    {
+      "username": "johnny",
+      "email": "johnny@learner.manipal.edu",
+      "regNo": "200953032",
+      "interests": ["Web Development", "Artificial Intelligence", "Machine Learning"],
+      "college": "MIT",
+      "password": "password123",
+      "role": "student"
+    },
+    {
+      "username": "jane",
+      "email": "jane@learner.manipal.edu",
+      "regNo": "200953033",
+      "interests": ["Mobile App Development", "Data Science", "Cloud Computing"],
+      "college": "KMC",
+      "password": "mypassword",
+      "role": "student"
+    },
+    {
+      "username": "bob",
+      "email": "bob@learner.manipal.edu",
+      "regNo": "200953034",
+      "interests": ["Blockchain", "Cybersecurity", "Internet of Things"],
+      "college": "MCODS",
+      "password": "12345678",
+      "role": "student"
+    },
+    {
+      "username": "alice",
+      "email": "alice@learner.manipal.edu",
+      "regNo": "200953035",
+      "interests": ["Virtual Reality", "Augmented Reality", "Game Development"],
+      "college": "MAHE",
+      "password": "securepassword",
+      "role": "professor"
+    },
+    {
+        "username": "mark",
+        "email": "mark@learner.manipal.edu",
+        "regNo": "200953036",
+        "interests": ["Web Development", "Data Science", "Machine Learning"],
+        "college": "KMC",
+        "password": "pass1234",
+        "role": "student"
+    },
+    {
+        "username": "peter",
+        "email": "peter@learner.manipal.edu",
+        "regNo": "200953037",
+        "interests": ["Artificial Intelligence", "Cloud Computing", "Mobile App Development"],
+        "college": "MIT",
+        "password": "peterpass",
+        "role": "student"
+    },
+    {
+        "username": "mary",
+        "email": "mary@learner.manipal.edu",
+        "regNo": "200953038",
+        "interests": ["Cybersecurity", "Blockchain", "Web Development"],
+        "college": "MCODS",
+        "password": "marypass",
+        "role": "student"
+    },
+    {
+        "username": "jacob",
+        "email": "jacob@learner.manipal.edu",
+        "regNo": "200953039",
+        "interests": ["Data Science", "Machine Learning", "Artificial Intelligence"],
+        "college": "MIT",
+        "password": "jacob123",
+        "role": "student"
+    },
+    {
+        "username": "olivia",
+        "email": "olivia@learner.manipal.edu",
+        "regNo": "200953040",
+        "interests": ["Virtual Reality", "Game Development", "Augmented Reality"],
+        "college": "KMC",
+        "password": "olivia123",
+        "role": "student"
+    },
+    {
+        "username": "lucas",
+        "email": "lucas@learner.manipal.edu",
+        "regNo": "200953041",
+        "interests": ["Web Development", "Mobile App Development", "Data Science"],
+        "college": "MCODS",
+        "password": "lucaspass",
+        "role": "student"
+    },
+    {
+        "username": "mia",
+        "email": "mia@learner.manipal.edu",
+        "regNo": "200953042",
+        "interests": ["Artificial Intelligence", "Machine Learning", "Cybersecurity"],
+        "college": "KMC",
+        "password": "miapassword",
+        "role": "student"
+    },
+    {
+        "username": "noah",
+        "email": "noah@learner.manipal.edu",
+        "regNo": "200953043",
+        "interests": ["Cloud Computing", "Web Development", "Data Science"],
+        "college": "MIT",
+        "password": "noahpass",
+        "role": "student"
+    },
+    {
+        "username": "sophia",
+        "email": "sophia@learner.manipal.edu",
+        "regNo": "200953044",
+        "interests": ["Mobile App Development", "Web Development", "Cloud Computing"],
+        "college": "KMC",
+        "password": "sophiapass",
+        "role": "student"
+    }
+  ]
+  
