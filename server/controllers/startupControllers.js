@@ -3,7 +3,21 @@ const User = require("../models/User");
 const Post = require("../models/Post");
 var mongoose = require("mongoose");
 
-var db = mongoose.connection;
+const registerStartup = async (req, res) => {
+  // post request, register startup, get body from request and create a new startup, and add it.
+  const { name, email, password, description } = req.body;
+  var newStartup = new Startup({
+    name,
+    email,
+    password,
+    description,
+  });
+  newStartup.save(function (err, book) {
+    if (err) return console.log(err);
+    console.log("Successfully saved to database");
+  });
+  res.status(200).json({ message: "Startup created" });
+};
 
 const addMembersToStartup = async (req, res) => {
   // post request, add members to startup, get body from request and create a new member for the startup, and add it.
@@ -103,4 +117,14 @@ const generatePDF = async (req, res) => {
     var blob = stream.toBlob("application/pdf");
     saveAs(blob, "report.pdf");
   });
+};
+
+module.exports = {
+  registerStartup,
+  addMembersToStartup,
+  createPost,
+  manageStartupStaff,
+  getMonthlyNumOfUsers,
+  deleteUserFromStartup,
+  generatePDF,
 };
