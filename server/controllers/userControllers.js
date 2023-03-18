@@ -1,60 +1,5 @@
 const User = require('../models/User');
 
-const getProductsPurchasedByUser = async (req, res) => {
-    try {
-        const { userId } = req.body;
-        const user = await User.findById(userId).populate('productsPurchased');
-
-        if (!user) {
-            return res.status(404).json({
-                message: "User not found",
-                status: "Error",
-            });
-        }
-
-        console.log(user.productsPurchased);
-        res.status(200).json({
-            message: "Products Purchased by User",
-            status: "success",
-            data: {
-                products: user.productsPurchased
-            }
-        });
-    } catch (err) {
-        res.status(400).json({
-            message: "Couldn't Fetch the Data",
-            status: "Error",
-            error: err,
-        });
-    }
-}
-
-// Adds a product to a user's purchased products array
-const addProductToUser = async (req, res) => {
-    try {
-        const { userId, productId } = req.body;
-        const user = await User.findById(userId);
-        if (!user) {
-            return res.status(404).json({ status: "Error", message: "User not Found" });
-        }
-        user.productsPurchased.push(productId);
-        await user.save();
-        res.status(200).json({
-            status: "success",
-            message: "Product Purchased Successfully",
-            data: {
-                user,
-            },
-        });
-    } catch (error) {
-        res.status(400).json({
-            message: "Couldn't Fetch the Data",
-            status: "Error",
-            error: err,
-        });
-    }
-};
-
 // Fetches all Users data [Paginated]
 const getAllUsers = async (req, res) => {
     try {
@@ -81,7 +26,6 @@ const getAllUsers = async (req, res) => {
     }
 };
 
-// Fetches the user details with the given ID.
 const getUserByID = async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
@@ -107,10 +51,9 @@ const getUserByID = async (req, res) => {
     }
 };
 
-// Creates a new User
 const createUser = async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, regNo, interests, college } = req.body;
 
         if (!username) {
             return res.status(400).json({
@@ -135,6 +78,9 @@ const createUser = async (req, res) => {
             username,
             email,
             password,
+            regNo,
+            interests,
+            college
         });
 
         res.status(201).json({
@@ -153,7 +99,6 @@ const createUser = async (req, res) => {
     }
 };
 
-// Updates user's details
 const updateUser = async (req, res) => {
     try {
         const { updatedData } = req.body;
@@ -187,7 +132,6 @@ const updateUser = async (req, res) => {
     }
 };
 
-// Deletes the user with the given ID.
 const deleteUser = async (req, res) => {
     try {
         const deletedUser = await User.findByIdAndDelete(req.params.id);
@@ -211,5 +155,5 @@ const deleteUser = async (req, res) => {
 };
 
 
-module.exports = { addProductToUser, getAllUsers, getUserByID, createUser, updateUser, deleteUser, getProductsPurchasedByUser };
+module.exports = { getAllUsers, getUserByID, createUser, updateUser, deleteUser };
 
