@@ -11,9 +11,6 @@ const userSchema = new mongoose.Schema(
                 if (value.length < 4) {
                     throw new Error('username must be at least 4 characters long');
                 }
-                if (/\s/.test(value)) {
-                    throw new Error('username cannot contain spaces');
-                }
                 if (/[^a-zA-Z0-9]/.test(value)) {
                     throw new Error('username cannot contain special characters');
                 }
@@ -24,6 +21,17 @@ const userSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
+        regNo: {
+            type: String,
+            required: true,
+            unique: true
+        }, 
+        interests: [{
+            type: String
+        }],
+        college: {
+            type: String,
+        },
         password: {
             type: String,
             required: true,
@@ -33,10 +41,6 @@ const userSchema = new mongoose.Schema(
                 }
             },
         }, 
-        productsPurchased: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        }]
     },
     { timestamps: true }
 );
