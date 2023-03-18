@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Innovwait",
+        "email": "startupA@example.com",
+        "password": "securepassword",
+        "description": "We're a startup focused on revolutionizing the way people learn online.",
+        "logo": "https://example.com/logo.png",
+        "staff": [
+            "64154d5422283ed9aff1b895",
+            "64154d5422283ed9aff1b896",
+            "64154d5422283ed9aff1b897"
+        ],
+        "posts": [
+            "641571da14ed4127fe2fbe50",
+            "641571d914ed4127fe2fbe4f"
+        ],
+        "numUsersPerMonth": [
+            100,
+            200,
+            300
+        ],
+        "revenuePerMonth": [
+            10000,
+            20000,
+            30000
+        ],
+        "salesPerMonth": [
+            50,
+            75,
+            100
+        ]
+    },
+    {
+        "name": "College Crunch",
+        "email": "startupB@example.com",
+        "password": "supersecurepassword",
+        "description": "We're a startup focused on developing smart home automation technology.",
+        "logo": "https://example.com/logo.png",
+        "staff": [
+            "64154d5522283ed9aff1b898",
+            "64154d5622283ed9aff1b899",
+            "64154d5622283ed9aff1b89a"
+        ],
+        "posts": [
+            "6415724cbdba6e2a4846e3b0"
+        ],
+        "numUsersPerMonth": [
+            500,
+            1000,
+            1500
+        ],
+        "revenuePerMonth": [
+            50000,
+            100000,
+            150000
+        ],
+        "salesPerMonth": [
+            100,
+            150,
+            200
+        ]
+    },
+    {
+        "name": "Growth Paradise",
+        "email": "startupC@example.com",
+        "password": "ultrasecurepassword",
+        "description": "We're a startup focused on creating sustainable fashion products.",
+        "logo": "https://example.com/logo.png",
+        "staff": [
+            "64154d5622283ed9aff1b89b"
+        ],
+        "posts": [
+            "6415724bbdba6e2a4846e3ae",
+            "6415724abdba6e2a4846e3ac"
+        ],
+        "numUsersPerMonth": [
+            200,
+            400,
+            600
+        ],
+        "revenuePerMonth": [
+            20000,
+            40000,
+            60000
+        ],
+        "salesPerMonth": [
+            25,
+            50,
+            75
+        ]
+    }
+]

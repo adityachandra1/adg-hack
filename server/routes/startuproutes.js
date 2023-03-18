@@ -1,12 +1,16 @@
 const express = require("express");
-const {
-  addMembersToStartup,
-  createPost,
-  manageStartupStaff,
-} = require("../controllers/startupControllers");
 
+const { registerStartup,
+    addMembersToStartup,
+    createPost,
+    manageStartupStaff,
+    getMonthlyNumOfUsers,
+    deleteUserFromStartup,
+    generatePDF,
+    getAllStarutps } = require('../controllers/startupControllers');
+    
 const router = express.Router();
 
-router.post("/add-members", addMembersToStartup);
-router.get("/manage-staff", manageStartupStaff);
+router.get("/", getAllStarutps);
+
 module.exports = router;

@@ -19,6 +19,11 @@ const registerStartup = async (req, res) => {
   return res.status(200).json({ message: "Startup created" });
 };
 
+const getAllStarutps = async (req, res) => {
+  // get request, get all startups, return all startups.
+  const startups = await Startup.find();
+  res.status(200).json(startups);
+};
 const addMembersToStartup = async (req, res) => {
   // post request, add members to startup, get body from request and create a new member for the startup, and add it.
   const { startupId, userId } = req.body;

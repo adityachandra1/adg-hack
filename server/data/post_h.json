@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Join Our Startup's Career Fair on April 15th",
+        "body": "ABC startup is hosting a Career Fair on April 15th to connect with talented professionals looking to join a fast-growing team. Register now to meet our hiring managers and learn about our job opportunities!",
+        "type": "event",
+        "author": "Sarah Johnson",
+        "tags": [
+            "startups",
+            "career fair",
+            "hiring"
+        ],
+        "likes": 9
+    },
+    {
+        "title": "Startup Hiring: Marketing Manager",
+        "body": "XYZ startup is seeking a Marketing Manager to lead our digital marketing campaigns and grow our customer base. The ideal candidate will have experience in SEO, social media, and content marketing.",
+        "type": "hiring",
+        "author": "Jane Smith",
+        "tags": [
+            "startups",
+            "hiring",
+            "marketing"
+        ],
+        "likes": 12
+    },
+    {
+        "title": "Join Our Virtual Startup Networking Event on May 20th",
+        "body": "Connect with other startup founders and investors at our virtual networking event on May 20th. You'll have the opportunity to pitch your ideas and get feedback from industry experts.",
+        "type": "event",
+        "author": "Bob Johnson",
+        "tags": [
+            "startups",
+            "networking",
+            "events"
+        ],
+        "likes": 17
+    },
+    {
+        "title": "Startup Hiring: UX Designer",
+        "body": "ABC startup is looking for a talented UX Designer to join our team and create engaging user experiences for our web and mobile applications. The ideal candidate will have experience with Sketch and InVision.",
+        "type": "hiring",
+        "author": "John Doe",
+        "tags": [
+            "startups",
+            "hiring",
+            "ux design"
+        ],
+        "likes": 8
+    },
+    {
+        "title": "Don't Miss Our Startup Pitch Competition on July 10th",
+        "body": "Watch some of the hottest startups pitch their ideas to a panel of investors at our Pitch Competition on July 10th. You'll learn about exciting new products and technologies while enjoying food and drinks.",
+        "type": "event",
+        "author": "Sarah Lee",
+        "tags": [
+            "startups",
+            "pitch competition",
+            "events"
+        ],
+        "likes": 21
+    }
+]

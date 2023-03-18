@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const Post = require("../models/post");
+=======
+const Post = require('../models/Post');
+>>>>>>> 1c1081868fa591d58f6ed38a1a3e97cf7c542395
 
 // Create a new post
 const createPost = async (req, res) => {

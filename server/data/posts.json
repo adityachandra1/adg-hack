@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Why Startups Need to Focus on Customer Experience",
+        "body": "In today's competitive startup landscape, customer experience is more important than ever. Here's why startups need to prioritize customer experience and how to do it effectively.",
+        "type": "blog",
+        "author": "John Doe",
+        "tags": [
+            "startups",
+            "customer experience",
+            "growth"
+        ],
+        "likes": 23
+    },
+    {
+        "title": "Startup Raises $10 Million in Series A Funding Round",
+        "body": "XYZ startup has raised $10 million in a Series A funding round led by ABC Ventures. The funds will be used to expand the company's product offerings and scale its operations.",
+        "type": "news",
+        "author": "Jane Smith",
+        "tags": [
+            "startups",
+            "funding",
+            "venture capital"
+        ],
+        "likes": 56
+    },
+    {
+        "title": "Upcoming Startup Event: Pitch Night",
+        "body": "Join us on June 15th for Pitch Night, an event where startups pitch their ideas to a panel of investors and industry experts. Register now to secure your spot!",
+        "type": "event",
+        "author": "Bob Johnson",
+        "tags": [
+            "startups",
+            "events",
+            "pitching"
+        ],
+        "likes": 12
+    },
+    {
+        "title": "Startup Founder Named Entrepreneur of the Year",
+        "body": "Sara Lee, founder of ABC startup, has been named Entrepreneur of the Year by Forbes Magazine. Lee's innovative approach to solving a common problem has made her a leader in the startup community.",
+        "type": "achievement",
+        "author": "Sara Lee",
+        "tags": [
+            "startups",
+            "entrepreneurship",
+            "awards"
+        ],
+        "likes": 87
+    },
+    {
+        "title": "Startup Hiring: Software Engineer",
+        "body": "ABC startup is hiring a Software Engineer to join our team. The ideal candidate will have experience with Node.js and React, and a passion for building innovative products.",
+        "type": "hiring",
+        "author": "John Smith",
+        "tags": [
+            "startups",
+            "hiring",
+            "software engineering"
+        ],
+        "likes": 5
+    }
+]
