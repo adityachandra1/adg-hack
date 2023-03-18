@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { createRequest, getAllRequests, getRequestById, updateRequest, deleteRequest } = require("../controllers/requestControllers");
+const { createRequest, getAllRequests, getRequestById, updateRequest, deleteRequest, sendMail } = require("../controllers/requestControllers");
 const router = express.Router();
 
 router.post("/", createRequest);
@@ -8,6 +8,7 @@ router.get("/:id", getRequestById);
 router.patch("/:id", updateRequest);
 router.get("/", getAllRequests);
 router.delete("/:id", deleteRequest);
+router.post("/mail", sendMail);
 
 module.exports = router;
 

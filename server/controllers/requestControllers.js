@@ -1,4 +1,17 @@
 const Request = require('../models/Request');
+const { sendEmailNotif_Text } = require('../utils/mailer');
+
+sendMail = async (req, res, next) => { 
+  try {
+    const { email } = req.body;
+    const subject = 'Request for Resource';
+    const text = 'Your request has been recieved';
+    const response = sendEmailNotif_Text(email, subject, text);
+    res.status(200).json({status: "Success", message: "Email Sent"})
+  } catch (err) {
+    res.status(400).json({ status: "Error", err });
+  }
+}
 
 createRequest = async (req, res, next) => {
   try {
@@ -72,4 +85,4 @@ deleteRequest = async (req, res, next) => {
   }
 };
 
-module.exports = {createRequest, getAllRequests, getRequestById, updateRequest, deleteRequest};
+module.exports = {createRequest, getAllRequests, getRequestById, updateRequest, deleteRequest, sendMail};
