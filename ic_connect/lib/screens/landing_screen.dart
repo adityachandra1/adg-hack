@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ic_connect/screens/choice_screen.dart';
+import 'package:ic_connect/screens/login_screen.dart';
 import 'package:ic_connect/widgets/rounded_button.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -92,7 +94,14 @@ class _LandingScreenState extends State<LandingScreen> {
                         padding: const EdgeInsets.all(15.0),
                         child: RoundedButton(
                           bText: 'Get Started',
-                          bFunction: () {},
+                          bFunction: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ChoiceScreen(),
+                              ),
+                            );
+                          },
                           textColor: Colors.white,
                           bWidth: width * 0.7,
                         ),
@@ -118,12 +127,12 @@ class _LandingScreenState extends State<LandingScreen> {
                               ),
                             ),
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => SignUp(),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginScreen(),
+                                ),
+                              );
                             },
                           )
                         ],
