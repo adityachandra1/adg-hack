@@ -38,6 +38,12 @@ dependencies:
   dio: ^5.0.3
   flutter_svg: ^2.0.4
   google_fonts: ^4.0.3
+  profanity_filter: ^2.0.0
+  syncfusion_flutter_charts: ^20.4.54
+  firebase_core: ^2.8.0
+  cloud_firestore: ^4.4.5
+  bottom_navy_bar: ^6.0.0
+  firebase_remote_config: ^3.0.15
 
 dev_dependencies:
   flutter_test:

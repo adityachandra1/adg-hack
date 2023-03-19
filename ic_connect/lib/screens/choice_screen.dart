@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ic_connect/screens/signup_screen.dart';
 
 import 'login_screen.dart';
 
 class ChoiceScreen extends StatelessWidget {
-  const ChoiceScreen({Key? key}) : super(key: key);
+  const ChoiceScreen({Key? key, required this.burl}) : super(key: key);
+  final String burl;
 
   @override
   Widget build(BuildContext context) {
@@ -45,87 +47,107 @@ class ChoiceScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Container(
-                width: width * 0.8,
-                height: height * 0.32,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  color: Color(0xFF7AD7EB),
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 200,
-                      width: 250,
-                      child: Image.asset("assets/student.png"),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>  SignUp(role: 'student', burl: burl,),
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: const Color(0xFF7AD7EB),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
+                  );
+                },
+                child: Container(
+                  width: width * 0.8,
+                  height: height * 0.32,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    color: Color(0xFF7AD7EB),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 200,
+                        width: 250,
+                        child: Image.asset("assets/student.png"),
                       ),
-                      child: const Text(
-                        'I am a student',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: const Color(0xFF7AD7EB),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
                           ),
-                        );
-                      },
-                    ),
-                  ],
+                        ),
+                        child: const Text(
+                          'I am a student',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>  SignUp(role: 'student', burl: burl,),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 50,
               ),
-              Container(
-                width: width * 0.8,
-                height: height * 0.32,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  color: Color(0xFF7AD7EB),
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 200,
-                      width: 250,
-                      child: Image.asset("assets/startup.png"),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>  SignUp(role: 'startup', burl: burl,),
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: const Color(0xFF7AD7EB),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
+                  );
+                },
+                child: Container(
+                  width: width * 0.8,
+                  height: height * 0.32,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    color: Color(0xFF7AD7EB),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 200,
+                        width: 250,
+                        child: Image.asset("assets/startup.png"),
                       ),
-                      child: const Text(
-                        'We are a startup',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: const Color(0xFF7AD7EB),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
                           ),
-                        );
-                      },
-                    ),
-                  ],
+                        ),
+                        child: const Text(
+                          'We are a startup',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>  SignUp(role: 'startup', burl: burl,),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -1,16 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:ic_connect/screens/signup_screen.dart';
 import 'package:ic_connect/utils/constants.dart';
-
 import '../../widgets/custom_input.dart';
 import '../../widgets/rounded_button.dart';
 import '../utils/methods.dart';
+import 'feed_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
-    Key? key,
+    Key? key, required this.burl,
   }) : super(key: key);
+
+  final String burl;
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -107,52 +108,60 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       // TODO: implement login
 
-                      await Dio().post("${kAPIEndPoint}auth/login", data: {
+                      await Dio().post("${widget.burl}auth/login", data: {
                         "email": _emailCtrl.text,
                         "password": _passwordCtrl.text
-                      }).then((value) => print(value.data));
+                      }).then((value) => print(value.data)) .then((value) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  FeedScreen(burl: widget.burl,),
+                          ),
+                        );
+                      });
                     },
                     bText: "Submit",
                     textColor: Colors.white,
                   ),
+
                 ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 20.0,
-                    left: MediaQuery.of(context).size.width / 5.5,
-                  ),
-                  child: Row(
-                    children: [
-                      const Text(
-                        "Don't have an account ? ",
-                        style: TextStyle(
-                          // color: Colors.white,
-                          decoration: TextDecoration.none,
-                          fontSize: 15,
-                        ),
-                      ),
-                      GestureDetector(
-                        child: const Text(
-                          "Sign-up",
-                          style: TextStyle(
-                            color: Color(0xFF7AD7EB),
-                            decoration: TextDecoration.none,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignUp(),
-                            ),
-                          );
-                        },
-                      )
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(
+                //     top: 20.0,
+                //     left: MediaQuery.of(context).size.width / 5.5,
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       const Text(
+                //         "Don't have an account ? ",
+                //         style: TextStyle(
+                //           // color: Colors.white,
+                //           decoration: TextDecoration.none,
+                //           fontSize: 15,
+                //         ),
+                //       ),
+                //       GestureDetector(
+                //         child: const Text(
+                //           "Sign-up",
+                //           style: TextStyle(
+                //             color: Color(0xFF7AD7EB),
+                //             decoration: TextDecoration.none,
+                //             fontSize: 16,
+                //             fontWeight: FontWeight.w500,
+                //           ),
+                //         ),
+                //         onTap: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //               builder: (context) => SignUp(),
+                //             ),
+                //           );
+                //         },
+                //       )
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),
