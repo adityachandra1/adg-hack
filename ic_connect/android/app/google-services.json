@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "281134691836",
+    "project_id": "ic-connect-app",
+    "storage_bucket": "ic-connect-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281134691836:android:724a2b405e3c55d95eae79",
+        "android_client_info": {
+          "package_name": "com.praveenvarma.ic_connect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281134691836-r6btii3pv26ijmvedv6eh5mevn30620r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEgh2V7nLfD1UW8MKweKsQEZA_LFy09Wk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281134691836-r6btii3pv26ijmvedv6eh5mevn30620r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

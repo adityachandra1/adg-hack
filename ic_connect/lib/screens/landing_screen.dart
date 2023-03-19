@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ic_connect/screens/choice_screen.dart';
+import 'package:ic_connect/screens/login_screen.dart';
 import 'package:ic_connect/widgets/rounded_button.dart';
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+  const LandingScreen({Key? key, required this.burl}) : super(key: key);
+
+  final String burl;
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
@@ -92,7 +96,14 @@ class _LandingScreenState extends State<LandingScreen> {
                         padding: const EdgeInsets.all(15.0),
                         child: RoundedButton(
                           bText: 'Get Started',
-                          bFunction: () {},
+                          bFunction: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>  ChoiceScreen(burl:widget.burl),
+                              ),
+                            );
+                          },
                           textColor: Colors.white,
                           bWidth: width * 0.7,
                         ),
@@ -118,12 +129,12 @@ class _LandingScreenState extends State<LandingScreen> {
                               ),
                             ),
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => SignUp(),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>  LoginScreen(burl:widget.burl,),
+                                ),
+                              );
                             },
                           )
                         ],
