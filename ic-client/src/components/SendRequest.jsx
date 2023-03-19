@@ -16,23 +16,51 @@ import {
 } from "antd";
 import BookRooms from "./BookRooms";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const { TextArea } = Input;
 
-const onFinish = (values) => {
-  // const toastId = toast.loading("Logging in...");
-  toast.success("Logged in successfully!");
-  //   console.log("Hello");
-  // setTimeout(() => {
-  //   const res = toast.error("Sent request successfully!", {
-  //     id: toastId,
-  //   });
-  //   console.log(res);
-  // }, 1500);
-};
-
 const SendRequest = () => {
   const [componentDisabled, setComponentDisabled] = useState(false);
+  const [formState, setFormState] = useState({
+    isUrgent: false,
+    name: "",
+    type: "",
+    deadline: "",
+    details: "",
+    fileList: [],
+  });
+
+  const handleChange = (name, value) => {
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const onFinish = (values) => {
+    const toastId = toast.loading("Sending...");
+    setTimeout(() => {
+      const res = toast.success("Sent request successfully!", {
+        id: toastId,
+      });
+      console.log(res);
+    }, 1000);
+    // POST request using axios.
+    axios
+      .post("https://2293-2401-4900-33ba-5800-b2bb-fcf-8925-307.in.ngrok.io/api/v1/requests", {
+        urgent: formState.isUrgent,
+        title: formState.name,
+        type: formState.type,
+        timestamp: formState.deadline,
+        details: formState.details,
+      })
+      .then((res) => {
+        //   Save the requests in the state
+        console.log(res);
+        toast.success("Sent request successfully!");
+      });
+  };
 
   return (
     <div className="requestWrapper">
@@ -46,15 +74,16 @@ const SendRequest = () => {
         className="reqForm"
       >
         <Form.Item label="Urgent">
-          <Radio.Group>
-            <Radio value="emergency"> Urgent? </Radio>
+          <Radio.Group onChange={(e) => handleChange("isUrgent", e.target.value)}>
+            <Radio value={true}> Urgent? </Radio>
+            <Radio value={false}> Not urgent </Radio>
           </Radio.Group>
         </Form.Item>
         <Form.Item label="Name">
-          <Input />
+          <Input onChange={(e) => handleChange("name", e.target.value)} />
         </Form.Item>
         <Form.Item label="Type">
-          <Select>
+          <Select onChange={(value) => handleChange("type", value)}>
             <Select.Option value="Conference Room">Conference Room</Select.Option>
             <Select.Option value="Laptop">Laptop</Select.Option>
             <Select.Option value="Super Computer">Super Computer</Select.Option>
@@ -64,10 +93,10 @@ const SendRequest = () => {
           </Select>
         </Form.Item>
         <Form.Item label="Deadline">
-          <DatePicker />
+          <DatePicker onChange={(date, dateString) => handleChange("deadline", dateString)} />
         </Form.Item>
         <Form.Item label="Details">
-          <TextArea rows={4} />
+          <TextArea rows={4} onChange={(e) => handleChange("details", e.target.value)} />
         </Form.Item>
         <Form.Item label="Upload" valuePropName="fileList">
           <Upload action="/upload.do" listType="picture-card">

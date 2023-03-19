@@ -22,6 +22,9 @@ const onFinishFailed = (errorInfo) => {
 const Login = () => {
   return (
     <div className="wrapper">
+      <h1 className="feedH1" style={{ color: "white" }}>
+        ADMIN LOGIN
+      </h1>
       <h1 className="loginText">Login</h1>
       <Form
         name="basic"

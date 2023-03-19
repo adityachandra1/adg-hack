@@ -64,3 +64,11 @@
   flex-basis: 1000px;
   flex: 2;
 }
+
+.feedH1 {
+  color: #13548a;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
