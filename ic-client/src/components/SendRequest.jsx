@@ -40,25 +40,19 @@ const SendRequest = () => {
 
   const onFinish = (values) => {
     const toastId = toast.loading("Sending...");
-    setTimeout(() => {
-      const res = toast.success("Sent request successfully!", {
-        id: toastId,
-      });
-      console.log(res);
-    }, 1000);
     // POST request using axios.
     axios
-      .post("https://2293-2401-4900-33ba-5800-b2bb-fcf-8925-307.in.ngrok.io/api/v1/requests", {
-        urgent: formState.isUrgent,
-        title: formState.name,
-        type: formState.type,
-        timestamp: formState.deadline,
-        details: formState.details,
+      .post("https://18ba-45-112-144-46.in.ngrok.io/api/v1/requests/", {
+        requester: formState.name,
+        resourceType: formState.type,
+        requestContent: formState.details,
       })
-      .then((res) => {
+      .then(function (res) {
         //   Save the requests in the state
         console.log(res);
-        toast.success("Sent request successfully!");
+        toast.success("Sent request successfully!", {
+          id: toastId,
+        });
       });
   };
 

@@ -20,6 +20,7 @@ const data = [
 
 const requestList = [
   {
+    name: "Chirag Rao",
     title: "Conference Room Reservation",
     type: "Conference Room",
     details: "Need to reserve the conference room for a meeting with clients.",
@@ -27,6 +28,7 @@ const requestList = [
     timestamp: "2023-03-18 10:30:00",
   },
   {
+    name: "Praveen Varma",
     title: "Laptop Request",
     type: "Laptop",
     details: "Need to request a new laptop for development purposes.",
@@ -87,6 +89,9 @@ const Feed = () => {
                 {item.urgent && <Tag color="red">Urgent</Tag>}
               </div>
               <div className="feed-item-details">
+                <div>
+                  <strong>Name:</strong> {item.name}
+                </div>
                 <div>
                   <strong>Type:</strong> {item.type}
                 </div>
